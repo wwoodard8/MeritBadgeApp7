@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lHe-mD-zVG">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="Jjw-kt-JcC">
+            <objects>
+                <viewController id="n63-Ty-NlQ" customClass="MainViewController" customModule="PDFViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aiY-Bl-V4R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhO-aB-Bwe">
+                                <rect key="frame" x="28" y="133" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Dog Care" image="Screen Shot 2020-02-04 at 3.46.30 PM"/>
+                                <connections>
+                                    <action selector="DogCareAction:" destination="n63-Ty-NlQ" eventType="touchUpInside" id="3Fo-L4-odZ"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="DogCareSegue" id="XW2-Cw-wLg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1Q-ZS-7JD">
+                                <rect key="frame" x="32" y="287" width="157" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Radio" image="Screen Shot 2020-02-04 at 3.47.18 PM"/>
+                                <connections>
+                                    <action selector="RadioAction:" destination="n63-Ty-NlQ" eventType="touchUpInside" id="QPu-kX-JsN"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="RadioSegue" id="1I3-rz-NYI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Web" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgd-Dz-1gw">
+                                <rect key="frame" x="301" y="183" width="69" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bm5-Yq-nAh">
+                                <rect key="frame" x="203" y="178" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="DogCareSaveLocal:" destination="n63-Ty-NlQ" eventType="valueChanged" id="CqW-QQ-HIk"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bUu-yy-S98">
+                                <rect key="frame" x="202" y="332" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="RadioSaveLocal:" destination="n63-Ty-NlQ" eventType="valueChanged" id="GWH-kk-upS"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Web" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofh-XH-lo3">
+                                <rect key="frame" x="301" y="337" width="69" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Merit Badge Books" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LaQ-SS-zWe">
+                                <rect key="frame" x="70" y="44" width="275" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Error Log" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpK-ur-ssc">
+                                <rect key="frame" x="90" y="448" width="234" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="3GX-nc-zC7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Svw-Hi-XxM"/>
+                    <connections>
+                        <outlet property="DogCareSaveLocal" destination="Bm5-Yq-nAh" id="Jhr-zV-KWa"/>
+                        <outlet property="DogCareSaveLocalLabel" destination="rgd-Dz-1gw" id="eDZ-ti-UnY"/>
+                        <outlet property="RadioSaveLocal" destination="bUu-yy-S98" id="b6F-aA-gMg"/>
+                        <outlet property="RadioSaveLocalLabel" destination="ofh-XH-lo3" id="HYq-uV-mFl"/>
+                        <outlet property="errorLogLabel" destination="vpK-ur-ssc" id="gjF-9Y-SvS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vF9-8T-MSn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1414.4927536231885" y="-593.30357142857144"/>
+        </scene>
+        <!--Merit BadgeL Ist Table View Controller-->
+        <scene sceneID="89W-p4-OoF">
+            <objects>
+                <tableViewController id="JAc-nR-cdj" customClass="MeritBadgeLIstTableViewController" customModule="PDFViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="93" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tjI-Va-XVi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.93140874714611854" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kcp-3H-C7Y">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <attributedString key="attributedText">
+                                <fragment content="Merit Badge Books">
+                                    <attributes>
+                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <font key="NSFont" size="30" name="Avenir-Light"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MeritBadgeCell" rowHeight="93" id="uYp-wd-leQ" customClass="MeritBadgeCell" customModule="PDFViewer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="78" width="414" height="93"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uYp-wd-leQ" id="WPV-hw-vD8">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aIR-tx-w3y">
+                                            <rect key="frame" x="28" y="0.0" width="93" height="93"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="93" id="AhU-l8-Omg"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP3-MG-P2P">
+                                            <rect key="frame" x="139" y="28" width="117" height="37"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Dog Care">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="27" name="Avenir-Book"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="aIR-tx-w3y" firstAttribute="centerY" secondItem="hP3-MG-P2P" secondAttribute="centerY" id="5Bf-GN-PtT"/>
+                                        <constraint firstItem="aIR-tx-w3y" firstAttribute="top" secondItem="WPV-hw-vD8" secondAttribute="topMargin" constant="-11" id="E0k-vX-Y4B"/>
+                                        <constraint firstItem="hP3-MG-P2P" firstAttribute="leading" secondItem="aIR-tx-w3y" secondAttribute="trailing" constant="18" id="Sve-mZ-6W5"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="hP3-MG-P2P" secondAttribute="bottom" constant="17" id="X78-E4-hT8"/>
+                                        <constraint firstItem="aIR-tx-w3y" firstAttribute="centerY" secondItem="WPV-hw-vD8" secondAttribute="centerY" id="aWg-2E-PSa"/>
+                                        <constraint firstItem="hP3-MG-P2P" firstAttribute="top" secondItem="WPV-hw-vD8" secondAttribute="topMargin" constant="17" id="aeI-Vm-ZJ7"/>
+                                        <constraint firstItem="aIR-tx-w3y" firstAttribute="leading" secondItem="WPV-hw-vD8" secondAttribute="leadingMargin" constant="8" id="tzc-z7-Icv"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="MeritBadgeImageView" destination="aIR-tx-w3y" id="kbW-fB-txC"/>
+                                    <outlet property="MeritBadgeTitle" destination="hP3-MG-P2P" id="04A-m8-wpc"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="JAc-nR-cdj" id="NI7-C6-wiv"/>
+                            <outlet property="delegate" destination="JAc-nR-cdj" id="Bz7-z9-fFZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="OrB-kM-H3U"/>
+                    <connections>
+                        <outlet property="MeritBadgetableview" destination="tjI-Va-XVi" id="Vwg-nC-w0v"/>
+                        <outlet property="tableView" destination="tjI-Va-XVi" id="bqS-Ry-RMQ"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="PDFSegue" id="qZ6-XP-bil"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ojm-yG-HdK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1879.7101449275365" y="128.57142857142856"/>
+        </scene>
+        <!--BSA Merit Badges-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PDFViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MJI-Ei-Wrb" customClass="PDFView">
+                                <rect key="frame" x="80" y="0.0" width="295" height="597"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kse-f4-iqJ" customClass="PDFThumbnailView">
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="wgi-mx-vif"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feN-CB-qEt">
+                                <rect key="frame" x="333" y="745" width="61" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="9It-6k-iGQ"/>
+                                    <constraint firstAttribute="width" constant="61" id="aZ7-At-aUO"/>
+                                </constraints>
+                                <state key="normal" title="Back" image="backarrow100"/>
+                                <connections>
+                                    <segue destination="JAc-nR-cdj" kind="show" id="3qO-GA-Fa7"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="backarrow-1" translatesAutoresizingMaskIntoConstraints="NO" id="aeL-fh-XH9">
+                                <rect key="frame" x="-550" y="1108" width="409" height="409"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kse-f4-iqJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7o3-hM-u4t"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="feN-CB-qEt" secondAttribute="bottom" constant="4" id="E8N-jh-bZa"/>
+                            <constraint firstItem="MJI-Ei-Wrb" firstAttribute="leading" secondItem="kse-f4-iqJ" secondAttribute="trailing" id="Gsj-qt-AeV"/>
+                            <constraint firstItem="MJI-Ei-Wrb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LH1-RR-EZg"/>
+                            <constraint firstItem="kse-f4-iqJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="V1I-Ss-in4"/>
+                            <constraint firstItem="MJI-Ei-Wrb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gWX-Hg-cI9"/>
+                            <constraint firstItem="MJI-Ei-Wrb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jrA-ZK-QuM"/>
+                            <constraint firstItem="kse-f4-iqJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="n3O-6g-Las"/>
+                            <constraint firstItem="feN-CB-qEt" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ogf-p2-ygM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="BSA Merit Badges" id="hlZ-Fe-3gi">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Sidebar" image="sidebar.left" catalog="system" id="YbC-eA-Drz">
+                                <connections>
+                                    <action selector="sidebarTapped:" destination="BYZ-38-t0r" id="ofC-52-Q6p"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Reset" image="arrow.clockwise" catalog="system" id="35p-bI-9sw">
+                                <connections>
+                                    <action selector="resetTapped:" destination="BYZ-38-t0r" id="Sdm-W8-47s"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Next" image="arrowright" id="nAv-yn-oxI">
+                                <connections>
+                                    <action selector="nextTapped:" destination="BYZ-38-t0r" id="Vs2-SQ-aI4"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Prev" image="arrowleft" id="iyF-hc-xYD">
+                                <connections>
+                                    <action selector="previousTapped:" destination="BYZ-38-t0r" id="KyR-cd-2Ch"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nextButton" destination="nAv-yn-oxI" id="MmF-n3-pbZ"/>
+                        <outlet property="pdfThumbnailView" destination="kse-f4-iqJ" id="ZqN-Ls-ugM"/>
+                        <outlet property="pdfView" destination="MJI-Ei-Wrb" id="9uZ-k4-EgR"/>
+                        <outlet property="previousButton" destination="iyF-hc-xYD" id="x0A-Pv-Mei"/>
+                        <outlet property="sidebarLeadingConstraint" destination="7o3-hM-u4t" id="4g2-Q6-o8P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2826.0869565217395" y="-753.34821428571422"/>
+        </scene>
+        <!--Start-->
+        <scene sceneID="vid-zh-aI8">
+            <objects>
+                <navigationController title="Start" automaticallyAdjustsScrollViewInsets="NO" id="ARZ-qt-tO9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yrd-lz-9DG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="n63-Ty-NlQ" kind="relationship" relationship="rootViewController" id="yRw-iM-jzy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ise-5h-TfY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168" y="-593"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dam-Jn-BV6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lHe-mD-zVG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SdG-AJ-asT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JAc-nR-cdj" kind="relationship" relationship="rootViewController" id="ihs-Ay-1Cx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Gx-dC-tKv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="969.56521739130437" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="qZ6-XP-bil"/>
+        <segue reference="3qO-GA-Fa7"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="Screen Shot 2020-02-04 at 3.46.30 PM" width="115" height="104"/>
+        <image name="Screen Shot 2020-02-04 at 3.47.18 PM" width="111" height="96"/>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="arrowleft" width="25" height="25"/>
+        <image name="arrowright" width="25" height="25"/>
+        <image name="backarrow-1" width="1546" height="1546"/>
+        <image name="backarrow100" width="100" height="100"/>
+        <image name="sidebar.left" catalog="system" width="128" height="93"/>
+    </resources>
+</document>
