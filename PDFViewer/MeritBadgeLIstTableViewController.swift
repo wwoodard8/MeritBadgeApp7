@@ -22,7 +22,6 @@ class MeritBadgeLIstTableViewController: UITableViewController {
         super.viewDidLoad()
         meritbadges = createArray()
         
-        
     }
     
     func createArray () -> [MeritBadge] {
@@ -36,6 +35,11 @@ class MeritBadgeLIstTableViewController: UITableViewController {
         tempMeritBadges.append(meritbadge1)
         tempMeritBadges.append(meritbadge2)
         tempMeritBadges.append(meritbadge3)
+        
+        //sort array by title
+        tempMeritBadges.sort { $0.title < $1.title }
+        //then sort by local
+        tempMeritBadges.sort { $0.localfile && !$1.localfile }
 
         return tempMeritBadges
     }
@@ -60,7 +64,6 @@ class MeritBadgeLIstTableViewController: UITableViewController {
     
 }
 
-
 extension MeritBadgeLIstTableViewController {
     
     
@@ -78,12 +81,11 @@ extension MeritBadgeLIstTableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MeritBadgeCell") as! MeritBadgeCell
         
-        //tableView.backgroundColor = UIColor.gray
+        //tableView.backgroundColor = UIColor.white
         //cell.backgroundColor = UIColor.gray
-        cell.layer.cornerRadius = 10
-        cell.layer.borderWidth = 1
-        
-        //cell.layer.borderColor = UIColor.black as! CGColor
+        //cell.layer.cornerRadius = 10
+        //cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.black.cgColor
         
         cell.setMeritBadge(meritbadge: meritbadge)
         
@@ -112,29 +114,52 @@ extension MeritBadgeLIstTableViewController {
         print(NSHomeDirectory())
         print(sender.tag)
         
+
         let filename = meritbadges[sender.tag].filename
+        let title = meritbadges[sender.tag].title
         
         if sender.isOn {
             
-            guard let url = URL(string: "https://willwoodard.com/meritbadge/" + filename + ".pdf") else { return }
+            //show alert dialog asking user if they want to download the Merit Badge book
+            let downloadalert = UIAlertController(title: "Do you wish to download the " + title + " merit badge book?", message: "A copy will be downloaded to this device.", preferredStyle: .alert)
+
+            downloadalert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
+                sender.setOn(false, animated: true)
+            }))
+            downloadalert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
             
-            let urlSession = URLSession(configuration: .default, delegate: self as? URLSessionDelegate, delegateQueue: OperationQueue())
+                guard let url = URL(string: "https://willwoodard.com/meritbadge/" + filename + ".pdf") else { return }
             
-            let downloadTask = urlSession.downloadTask(with: url)
+                let urlSession = URLSession(configuration: .default, delegate: self as? URLSessionDelegate, delegateQueue: OperationQueue())
             
-            downloadTask.resume()
+                let downloadTask = urlSession.downloadTask(with: url)
             
-            createSpinnerView()
-                        
+                downloadTask.resume()
+            
+                self.createSpinnerView()
+            }))
+            
+            self.present(downloadalert, animated: true)
+            
         }
         else {
-            let fileManager = FileManager.default
+            //show alert dialog asking user if they want to delete the local Merit Badge book
+            let deletealert = UIAlertController(title: "Do you wish to delete your copy of the " + title + " merit badge book?", message: "Your copy will be removed from this device.", preferredStyle: .alert)
+
+            deletealert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
+                sender.setOn(true, animated: true)
+            }))
+            deletealert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                        let fileManager = FileManager.default
             let removeStr = NSHomeDirectory() + "/Library/Caches/" + filename + ".pdf"
             if fileManager.fileExists(atPath: removeStr) {
                 try! fileManager.removeItem(atPath: removeStr)
             } else {
                 print("file does not exist")
             }
+            }))
+                
+            self.present(deletealert, animated: true)
         }
 
     }
