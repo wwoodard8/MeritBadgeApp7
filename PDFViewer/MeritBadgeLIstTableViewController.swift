@@ -17,13 +17,11 @@ class MeritBadgeLIstTableViewController: UITableViewController {
     var whichBadge = ""
     var pdfURL: URL!
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         meritbadges = createArray()
-        
     }
-    
+            
     func createArray () -> [MeritBadge] {
         
         var tempMeritBadges: [MeritBadge] = []
@@ -31,15 +29,29 @@ class MeritBadgeLIstTableViewController: UITableViewController {
         let meritbadge1 = MeritBadge(image: UIImage(named: "dogcare")!, title: "Dog Care", filename: "dogcaredown")
         let meritbadge2 = MeritBadge(image: UIImage(named: "radio")!, title: "Radio", filename: "radio")
         let meritbadge3 = MeritBadge(image: UIImage(named: "firstaid")!, title: "First Aid", filename: "firstaid")
-
+        
         tempMeritBadges.append(meritbadge1)
         tempMeritBadges.append(meritbadge2)
         tempMeritBadges.append(meritbadge3)
         
+        //loop through all array entries and check for local presence of merit badge pdf, set localfile to true if present
+        let fileManager = FileManager.default
+        for tempMeritBadge in tempMeritBadges {
+            
+            let fileStr = NSHomeDirectory() + "/Library/Caches/" + tempMeritBadge.filename + ".pdf"
+            if fileManager.fileExists(atPath: fileStr) {
+                tempMeritBadge.localfile = true
+            } else {
+                tempMeritBadge.localfile = false
+            }
+
+        }
+        
         //sort array by title
         tempMeritBadges.sort { $0.title < $1.title }
         //then sort by local
-        tempMeritBadges.sort { $0.localfile && !$1.localfile }
+        //dont sort until I figure out how to refresh correctly
+        //tempMeritBadges.sort { $0.localfile && !$1.localfile }
 
         return tempMeritBadges
     }
@@ -59,6 +71,7 @@ class MeritBadgeLIstTableViewController: UITableViewController {
             child.willMove(toParent: nil)
             child.view.removeFromSuperview()
             child.removeFromParent()
+            
         }
     }
     
@@ -66,8 +79,8 @@ class MeritBadgeLIstTableViewController: UITableViewController {
 
 extension MeritBadgeLIstTableViewController {
     
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return meritbadges.count
     }
     
@@ -137,7 +150,8 @@ extension MeritBadgeLIstTableViewController {
                 downloadTask.resume()
             
                 self.createSpinnerView()
-            }))
+                
+           }))
             
             self.present(downloadalert, animated: true)
             
@@ -150,13 +164,15 @@ extension MeritBadgeLIstTableViewController {
                 sender.setOn(true, animated: true)
             }))
             deletealert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-                        let fileManager = FileManager.default
-            let removeStr = NSHomeDirectory() + "/Library/Caches/" + filename + ".pdf"
-            if fileManager.fileExists(atPath: removeStr) {
-                try! fileManager.removeItem(atPath: removeStr)
-            } else {
-                print("file does not exist")
-            }
+                let fileManager = FileManager.default
+                let removeStr = NSHomeDirectory() + "/Library/Caches/" + filename + ".pdf"
+                if fileManager.fileExists(atPath: removeStr) {
+                    try! fileManager.removeItem(atPath: removeStr)
+                    self.createSpinnerView()
+ 
+                } else {
+                    print("file does not exist")
+                }
             }))
                 
             self.present(deletealert, animated: true)
@@ -165,6 +181,7 @@ extension MeritBadgeLIstTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         print("row selected: \(indexPath.row)")
         print(meritbadges[indexPath.row].title)
         print(meritbadges[indexPath.row].filename)

@@ -295,7 +295,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="JAc-nR-cdj" kind="relationship" relationship="rootViewController" id="ihs-Ay-1Cx"/>
+                        <segue destination="JAc-nR-cdj" kind="relationship" relationship="rootViewController" destinationCreationSelector="bookListSegue" id="ihs-Ay-1Cx"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Gx-dC-tKv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

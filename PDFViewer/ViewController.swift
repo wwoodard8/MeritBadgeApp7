@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextButton: UIBarButtonItem!
     @IBOutlet weak var errorLabel: UILabel!
     
+    private let refreshControl = UIRefreshControl()
     
     // MARK: - Constants
 
