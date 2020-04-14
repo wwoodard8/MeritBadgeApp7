@@ -69,7 +69,7 @@ class MeritBadgeLIstTableViewController: UITableViewController {
 
         }
         
-        //sort array by title
+        //sort array by stitle
         tempMeritBadges.sort { $0.title < $1.title }
         
         //then sort by if the book is downloaded
@@ -119,8 +119,6 @@ extension MeritBadgeLIstTableViewController {
         let meritbadge = meritbadges[indexPath.row]
         print(meritbadge.title)
         print(indexPath.row)
-        
-        self.createSpinnerView()
         
         let fileManager = FileManager.default
         
