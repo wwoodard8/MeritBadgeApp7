@@ -17,9 +17,12 @@ class MeritBadgeLIstTableViewController: UITableViewController {
     var whichBadge = ""
     var pdfURL: URL!
     var downloadOnly = Bool()
+    
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         meritbadges = createArray()
         
         //create the settings button programatically
@@ -31,11 +34,13 @@ class MeritBadgeLIstTableViewController: UITableViewController {
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
 
         self.view.addSubview(button)
-    }
+        
+        }
     
     @objc func buttonAction(sender: UIButton!) {
       print("Button tapped")
-        performSegue(withIdentifier: "settingsView", sender: nil)
+        //performSegue(withIdentifier: "settingsView", sender: nil)
+        tableView.reloadData()
     }
 
     func createArray () -> [MeritBadge] {
@@ -67,8 +72,10 @@ class MeritBadgeLIstTableViewController: UITableViewController {
         
         //sort array by title
         tempMeritBadges.sort { $0.title < $1.title }
-        //then sort by local
-        //dont sort until I figure out how to refresh correctly
+        
+        //then sort by if the book is downloaded
+        let downloadOnly = defaults.bool(forKey: "mySwitchValue")
+        
         if downloadOnly {
             print("download is true ")
             tempMeritBadges.sort { $0.localfile && !$1.localfile }
@@ -79,8 +86,6 @@ class MeritBadgeLIstTableViewController: UITableViewController {
             return tempMeritBadges
         }
         
-
-
     }
     
     func createSpinnerView() {
