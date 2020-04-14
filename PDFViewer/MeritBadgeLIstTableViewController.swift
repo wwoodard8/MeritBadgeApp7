@@ -16,15 +16,32 @@ class MeritBadgeLIstTableViewController: UITableViewController {
     var meritbadges: [MeritBadge] = []
     var whichBadge = ""
     var pdfURL: URL!
+    var downloadOnly = Bool()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         meritbadges = createArray()
+        
+        //create the settings button programatically
+        let button = UIButton(frame: CGRect(x: self.view.frame.size.width - 80, y: 0, width: 60, height: 50))
+        button.backgroundColor = .white
+        button.setTitleColor(.blue, for: .normal)
+        button.setTitle("Settings", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 16.0)
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+
+        self.view.addSubview(button)
     }
-            
+    
+    @objc func buttonAction(sender: UIButton!) {
+      print("Button tapped")
+        performSegue(withIdentifier: "settingsView", sender: nil)
+    }
+
     func createArray () -> [MeritBadge] {
         
         var tempMeritBadges: [MeritBadge] = []
+        var tempMeritBadges2: [MeritBadge] = []
         
         let meritbadge1 = MeritBadge(image: UIImage(named: "dogcare")!, title: "Dog Care", filename: "dogcaredown")
         let meritbadge2 = MeritBadge(image: UIImage(named: "radio")!, title: "Radio", filename: "radio")
@@ -41,6 +58,7 @@ class MeritBadgeLIstTableViewController: UITableViewController {
             let fileStr = NSHomeDirectory() + "/Library/Caches/" + tempMeritBadge.filename + ".pdf"
             if fileManager.fileExists(atPath: fileStr) {
                 tempMeritBadge.localfile = true
+                tempMeritBadges2.append(tempMeritBadge)
             } else {
                 tempMeritBadge.localfile = false
             }
@@ -51,9 +69,18 @@ class MeritBadgeLIstTableViewController: UITableViewController {
         tempMeritBadges.sort { $0.title < $1.title }
         //then sort by local
         //dont sort until I figure out how to refresh correctly
-        //tempMeritBadges.sort { $0.localfile && !$1.localfile }
+        if downloadOnly {
+            print("download is true ")
+            tempMeritBadges.sort { $0.localfile && !$1.localfile }
+            return tempMeritBadges2
+        }
+        else{
+            print ("download is false")
+            return tempMeritBadges
+        }
+        
 
-        return tempMeritBadges
+
     }
     
     func createSpinnerView() {
@@ -177,7 +204,7 @@ extension MeritBadgeLIstTableViewController {
                 
             self.present(deletealert, animated: true)
         }
-
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -190,21 +217,19 @@ extension MeritBadgeLIstTableViewController {
         performSegue(withIdentifier: "PDFSegue", sender: self)
     }
 
-    
-    //override func tableView(_ tableView: UITableView, titleForHeaderInSection
-    //                           section: Int) -> String? {
-    //   return "Tap badge to view. Slide to download."
-    //
-    //}
-    
-    //override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    //    return 0.000001;
-    //}
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! ViewController
-        vc.showBadgeName = self.whichBadge
-        vc.showpdfURL = self.pdfURL
+        print("segue id")
+        print(segue.identifier)
+        if segue.identifier == "SettingsView"
+        {
+            print ("in settingsview")
+        }
+        else if segue.identifier == "PDFSegue"
+        {
+            let vc = segue.destination as! ViewController
+            vc.showBadgeName = self.whichBadge
+            vc.showpdfURL = self.pdfURL
+        }
     }
     
     

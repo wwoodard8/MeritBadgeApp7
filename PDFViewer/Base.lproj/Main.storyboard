@@ -93,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="1414.4927536231885" y="-593.30357142857144"/>
         </scene>
-        <!--Merit BadgeL Ist Table View Controller-->
+        <!--Merit Badge List-->
         <scene sceneID="89W-p4-OoF">
             <objects>
-                <tableViewController id="JAc-nR-cdj" customClass="MeritBadgeLIstTableViewController" customModule="PDFViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="JAc-nR-cdj" userLabel="Merit Badge List" customClass="MeritBadgeLIstTableViewController" customModule="PDFViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" rowHeight="93" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tjI-Va-XVi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,6 +106,7 @@
                         <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="Kcp-3H-C7Y">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <gestureRecognizers/>
                             <attributedString key="attributedText">
                                 <fragment content="   Merit Badge Books">
                                     <attributes>
@@ -168,16 +169,90 @@
                             <outlet property="delegate" destination="JAc-nR-cdj" id="Bz7-z9-fFZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="OrB-kM-H3U"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="SZV-fy-5so"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="MeritBadgetableview" destination="tjI-Va-XVi" id="Vwg-nC-w0v"/>
                         <outlet property="tableView" destination="tjI-Va-XVi" id="bqS-Ry-RMQ"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="PDFSegue" id="qZ6-XP-bil"/>
+                        <segue destination="UDB-lf-hdR" kind="show" identifier="settingsView" id="IqX-8O-f4f"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ojm-yG-HdK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1879.7101449275365" y="128.57142857142856"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="ihV-f4-vWO">
+            <objects>
+                <viewController id="UDB-lf-hdR" customClass="SettingsViewController" customModule="PDFViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8gF-II-Afl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAu-V1-oOt">
+                                <rect key="frame" x="35" y="20" width="112" height="41"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Settings">
+                                        <attributes>
+                                            <font key="NSFont" size="30" name="Avenir-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrY-So-k66">
+                                <rect key="frame" x="56" y="104" width="177" height="24"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Show only downloaded">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="Avenir-Light"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Irb-w7-bHa">
+                                <rect key="frame" x="282" y="101" width="51" height="31"/>
+                                <connections>
+                                    <action selector="downloadSwitchTapped:" destination="UDB-lf-hdR" eventType="valueChanged" id="HTD-FE-lEd"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cC-xT-3Wb">
+                                <rect key="frame" x="319" y="671" width="61" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="GMB-sk-iFA"/>
+                                    <constraint firstAttribute="width" constant="61" id="s8O-J3-oa2"/>
+                                </constraints>
+                                <state key="normal" title="Back" image="backarrow100"/>
+                                <connections>
+                                    <segue destination="JAc-nR-cdj" kind="show" id="mpi-sd-OPT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dAu-V1-oOt" firstAttribute="leading" secondItem="eu7-Yt-15r" secondAttribute="leading" constant="35" id="5yJ-BO-KuO"/>
+                            <constraint firstItem="dAu-V1-oOt" firstAttribute="top" secondItem="eu7-Yt-15r" secondAttribute="top" constant="20" id="7dZ-LV-onU"/>
+                            <constraint firstItem="QrY-So-k66" firstAttribute="leading" secondItem="eu7-Yt-15r" secondAttribute="leading" constant="56" id="GMl-m8-JIq"/>
+                            <constraint firstItem="QrY-So-k66" firstAttribute="top" secondItem="dAu-V1-oOt" secondAttribute="bottom" constant="43" id="Pu4-IK-4Po"/>
+                            <constraint firstItem="eu7-Yt-15r" firstAttribute="bottom" secondItem="5cC-xT-3Wb" secondAttribute="bottom" constant="29" id="cQL-LO-GvY"/>
+                            <constraint firstItem="eu7-Yt-15r" firstAttribute="trailing" secondItem="5cC-xT-3Wb" secondAttribute="trailing" constant="34" id="kg8-tI-AKH"/>
+                            <constraint firstItem="Irb-w7-bHa" firstAttribute="top" secondItem="eu7-Yt-15r" secondAttribute="top" constant="101" id="pgi-I6-zKI"/>
+                            <constraint firstItem="Irb-w7-bHa" firstAttribute="leading" secondItem="QrY-So-k66" secondAttribute="trailing" constant="49" id="qA2-jf-wWi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eu7-Yt-15r"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yED-eS-tOR"/>
+                    <connections>
+                        <outlet property="downloadSwitch" destination="Irb-w7-bHa" id="iNj-FN-vsR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9EN-cd-lQ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2790" y="129"/>
         </scene>
         <!--BSA Merit Badges-->
         <scene sceneID="tne-QT-ifu">
@@ -192,14 +267,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kse-f4-iqJ" customClass="PDFThumbnailView">
-                                <rect key="frame" x="0.0" y="0.0" width="80" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="759"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="wgi-mx-vif"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feN-CB-qEt">
-                                <rect key="frame" x="333" y="745" width="61" height="59"/>
+                                <rect key="frame" x="333" y="696" width="61" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="9It-6k-iGQ"/>
                                     <constraint firstAttribute="width" constant="61" id="aZ7-At-aUO"/>
@@ -305,7 +380,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="qZ6-XP-bil"/>
-        <segue reference="3qO-GA-Fa7"/>
+        <segue reference="mpi-sd-OPT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Screen Shot 2020-02-04 at 3.46.30 PM" width="115" height="104"/>

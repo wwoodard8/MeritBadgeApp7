@@ -10,6 +10,7 @@
 		264FA7B623F1FD6500E7C0E1 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264FA7B523F1FD6400E7C0E1 /* SpinnerViewController.swift */; };
 		267F423A23F0B0FD002C7585 /* MeritBadgeLIstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267F423923F0B0FD002C7585 /* MeritBadgeLIstTableViewController.swift */; };
 		267F423E23F0B4D5002C7585 /* MeritBadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267F423D23F0B4D5002C7585 /* MeritBadgeCell.swift */; };
+		269AFB972444BBD8004BD908 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AFB962444BBD8004BD908 /* SettingsViewController.swift */; };
 		26B1EAB223F0B8010002276D /* MeritBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1EAB123F0B8010002276D /* MeritBadge.swift */; };
 		26C887BD23EA107F0021C574 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C887BC23EA107F0021C574 /* MainViewController.swift */; };
 		9BDDDBAD1FFC6A030090BDB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDDDBAC1FFC6A030090BDB4 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 		264FA7B523F1FD6400E7C0E1 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		267F423923F0B0FD002C7585 /* MeritBadgeLIstTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeritBadgeLIstTableViewController.swift; sourceTree = "<group>"; };
 		267F423D23F0B4D5002C7585 /* MeritBadgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeritBadgeCell.swift; sourceTree = "<group>"; };
+		269AFB962444BBD8004BD908 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		26B1EAB123F0B8010002276D /* MeritBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeritBadge.swift; sourceTree = "<group>"; };
 		26C887BC23EA107F0021C574 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9BDDDBA91FFC6A030090BDB4 /* PDFViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 				26C887BC23EA107F0021C574 /* MainViewController.swift */,
 				267F423D23F0B4D5002C7585 /* MeritBadgeCell.swift */,
 				267F423923F0B0FD002C7585 /* MeritBadgeLIstTableViewController.swift */,
+				269AFB962444BBD8004BD908 /* SettingsViewController.swift */,
 				26B1EAB123F0B8010002276D /* MeritBadge.swift */,
 				264FA7B523F1FD6400E7C0E1 /* SpinnerViewController.swift */,
 				9BDDDBB01FFC6A030090BDB4 /* Main.storyboard */,
@@ -159,6 +162,7 @@
 				267F423E23F0B4D5002C7585 /* MeritBadgeCell.swift in Sources */,
 				264FA7B623F1FD6500E7C0E1 /* SpinnerViewController.swift in Sources */,
 				26B1EAB223F0B8010002276D /* MeritBadge.swift in Sources */,
+				269AFB972444BBD8004BD908 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
