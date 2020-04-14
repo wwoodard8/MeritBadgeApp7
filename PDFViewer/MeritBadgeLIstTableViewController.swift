@@ -38,9 +38,8 @@ class MeritBadgeLIstTableViewController: UITableViewController {
         }
     
     @objc func buttonAction(sender: UIButton!) {
-      print("Button tapped")
-        //performSegue(withIdentifier: "settingsView", sender: nil)
-        tableView.reloadData()
+        print("Button tapped")
+        performSegue(withIdentifier: "settingsView", sender: nil)
     }
 
     func createArray () -> [MeritBadge] {
@@ -121,8 +120,9 @@ extension MeritBadgeLIstTableViewController {
         print(meritbadge.title)
         print(indexPath.row)
         
-        let fileManager = FileManager.default
+        self.createSpinnerView()
         
+        let fileManager = FileManager.default
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MeritBadgeCell") as! MeritBadgeCell
         
@@ -217,7 +217,7 @@ extension MeritBadgeLIstTableViewController {
         print("row selected: \(indexPath.row)")
         print(meritbadges[indexPath.row].title)
         print(meritbadges[indexPath.row].filename)
-
+        
         self.whichBadge = meritbadges[indexPath.row].filename
         performSegue(withIdentifier: "PDFSegue", sender: self)
     }
@@ -242,6 +242,7 @@ extension MeritBadgeLIstTableViewController {
 
 extension MeritBadgeLIstTableViewController:  URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        
         print("downloadLocation:", location)
         // create destination URL with the original pdf name
         print(NSHomeDirectory())
