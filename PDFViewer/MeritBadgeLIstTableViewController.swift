@@ -40,21 +40,42 @@ class MeritBadgeLIstTableViewController: UITableViewController {
     @objc func buttonAction(sender: UIButton!) {
         print("Button tapped")
         performSegue(withIdentifier: "settingsView", sender: nil)
+        //defaults.set(false, forKey: "mySwitchValue")
+        //meritbadges = createArray()
+        //tableView.setNeedsDisplay()
     }
 
     func createArray () -> [MeritBadge] {
         
+        let meritBadgeName: [[String]] =
+        [
+        ["americanbusiness", "American Business"],
+        ["americancultures", "American Cultures"],
+        ["americanheritage", "American Heritage"],
+        ["americanlabor", "American Labor"],
+        ["animalscience", "American Science"],
+        ["archery", "Archery"],
+        ["architecture", "Architecture"],
+        ["art", "Art"],
+        ["astronomy", "Astronomy"],
+        ["athletics", "Athletics"],
+        ["dogcare", "Dog Care"],
+        ["radio", "Radio"],
+        ["firstaid", "First"],
+        ]
+        //print(meritBadgeName[0][1]) is "American Business"
+        
         var tempMeritBadges: [MeritBadge] = []
         var tempMeritBadges2: [MeritBadge] = []
         
-        let meritbadge1 = MeritBadge(image: UIImage(named: "dogcare")!, title: "Dog Care", filename: "dogcaredown")
-        let meritbadge2 = MeritBadge(image: UIImage(named: "radio")!, title: "Radio", filename: "radio")
-        let meritbadge3 = MeritBadge(image: UIImage(named: "firstaid")!, title: "First Aid", filename: "firstaid")
-        
-        tempMeritBadges.append(meritbadge1)
-        tempMeritBadges.append(meritbadge2)
-        tempMeritBadges.append(meritbadge3)
-        
+        for meritBadge in meritBadgeName {
+            
+            print(meritBadge[0])
+            let fullMeritBadgeInfo = MeritBadge(image: UIImage(named: meritBadge[0])!, title: meritBadge[1], filename: meritBadge[0])
+            tempMeritBadges.append(fullMeritBadgeInfo)
+
+        }
+
         //loop through all array entries and check for local presence of merit badge pdf, set localfile to true if present
         let fileManager = FileManager.default
         for tempMeritBadge in tempMeritBadges {
@@ -180,6 +201,7 @@ extension MeritBadgeLIstTableViewController {
                 downloadTask.resume()
             
                 self.createSpinnerView()
+
                 
            }))
             
