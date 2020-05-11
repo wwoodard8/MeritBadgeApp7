@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -98,13 +98,13 @@
             <objects>
                 <tableViewController title="Merit Badge" id="JAc-nR-cdj" userLabel="Merit Badge List" customClass="MeritBadgeLIstTableViewController" customModule="PDFViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" rowHeight="93" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tjI-Va-XVi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="Kcp-3H-C7Y">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <gestureRecognizers/>
                             <attributedString key="attributedText">
@@ -121,7 +121,7 @@
                         </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MeritBadgeCell" rowHeight="93" id="uYp-wd-leQ" customClass="MeritBadgeCell" customModule="PDFViewer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="140.5" width="414" height="93"/>
+                                <rect key="frame" x="0.0" y="137.5" width="414" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uYp-wd-leQ" id="WPV-hw-vD8">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
@@ -133,13 +133,14 @@
                                                 <constraint firstAttribute="width" constant="93" id="AhU-l8-Omg"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP3-MG-P2P">
-                                            <rect key="frame" x="139" y="28" width="117" height="37"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hP3-MG-P2P">
+                                            <rect key="frame" x="139" y="0.0" width="225" height="93"/>
                                             <attributedString key="attributedText">
-                                                <fragment content="Dog Care">
+                                                <fragment content="Architecture">
                                                     <attributes>
                                                         <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                         <font key="NSFont" size="27" name="Avenir-Book"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
@@ -149,10 +150,11 @@
                                     <constraints>
                                         <constraint firstItem="aIR-tx-w3y" firstAttribute="centerY" secondItem="hP3-MG-P2P" secondAttribute="centerY" id="5Bf-GN-PtT"/>
                                         <constraint firstItem="aIR-tx-w3y" firstAttribute="top" secondItem="WPV-hw-vD8" secondAttribute="topMargin" constant="-11" id="E0k-vX-Y4B"/>
+                                        <constraint firstAttribute="bottom" secondItem="hP3-MG-P2P" secondAttribute="bottom" id="GAJ-Nk-lfC"/>
+                                        <constraint firstAttribute="trailing" secondItem="hP3-MG-P2P" secondAttribute="trailing" constant="50" id="MgB-qb-YYW"/>
+                                        <constraint firstItem="hP3-MG-P2P" firstAttribute="top" secondItem="WPV-hw-vD8" secondAttribute="top" id="NhH-5p-lM4"/>
                                         <constraint firstItem="hP3-MG-P2P" firstAttribute="leading" secondItem="aIR-tx-w3y" secondAttribute="trailing" constant="18" id="Sve-mZ-6W5"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="hP3-MG-P2P" secondAttribute="bottom" constant="17" id="X78-E4-hT8"/>
                                         <constraint firstItem="aIR-tx-w3y" firstAttribute="centerY" secondItem="WPV-hw-vD8" secondAttribute="centerY" id="aWg-2E-PSa"/>
-                                        <constraint firstItem="hP3-MG-P2P" firstAttribute="top" secondItem="WPV-hw-vD8" secondAttribute="topMargin" constant="17" id="aeI-Vm-ZJ7"/>
                                         <constraint firstItem="aIR-tx-w3y" firstAttribute="leading" secondItem="WPV-hw-vD8" secondAttribute="leadingMargin" constant="8" id="tzc-z7-Icv"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -188,11 +190,11 @@
             <objects>
                 <viewController id="UDB-lf-hdR" customClass="SettingsViewController" customModule="PDFViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8gF-II-Afl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAu-V1-oOt">
-                                <rect key="frame" x="35" y="20" width="112" height="41"/>
+                                <rect key="frame" x="35" y="64" width="112" height="41"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Settings">
                                         <attributes>
@@ -204,7 +206,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrY-So-k66">
-                                <rect key="frame" x="56" y="104" width="177" height="24"/>
+                                <rect key="frame" x="56" y="148" width="177" height="24"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Show only downloaded">
                                         <attributes>
@@ -215,13 +217,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Irb-w7-bHa">
-                                <rect key="frame" x="282" y="101" width="51" height="31"/>
+                                <rect key="frame" x="282" y="145" width="51" height="31"/>
                                 <connections>
                                     <action selector="downloadSwitchTapped:" destination="UDB-lf-hdR" eventType="valueChanged" id="HTD-FE-lEd"/>
                                 </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cC-xT-3Wb">
-                                <rect key="frame" x="319" y="671" width="61" height="59"/>
+                                <rect key="frame" x="319" y="725" width="61" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="GMB-sk-iFA"/>
                                     <constraint firstAttribute="width" constant="61" id="s8O-J3-oa2"/>
@@ -259,7 +261,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PDFViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MJI-Ei-Wrb" customClass="PDFView">
@@ -267,14 +269,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kse-f4-iqJ" customClass="PDFThumbnailView">
-                                <rect key="frame" x="0.0" y="0.0" width="80" height="759"/>
+                                <rect key="frame" x="0.0" y="44" width="80" height="769"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="wgi-mx-vif"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feN-CB-qEt">
-                                <rect key="frame" x="333" y="696" width="61" height="59"/>
+                                <rect key="frame" x="333" y="750" width="61" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="9It-6k-iGQ"/>
                                     <constraint firstAttribute="width" constant="61" id="aZ7-At-aUO"/>
@@ -379,6 +381,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="IqX-8O-f4f"/>
         <segue reference="qZ6-XP-bil"/>
         <segue reference="mpi-sd-OPT"/>
     </inferredMetricsTieBreakers>
