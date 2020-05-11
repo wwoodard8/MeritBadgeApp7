@@ -19,6 +19,16 @@ class MeritBadgeLIstTableViewController: UITableViewController {
     var downloadOnly = Bool()
     
     let defaults = UserDefaults.standard
+    
+    //initialization for search bar
+    let searchController = UISearchController(searchResultsController: nil)
+    var filteredBadges: [MeritBadge] = []
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+    var isFiltering: Bool {
+      return searchController.isActive && !isSearchBarEmpty
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +44,17 @@ class MeritBadgeLIstTableViewController: UITableViewController {
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
 
         self.view.addSubview(button)
+        
+        // 1
+        searchController.searchResultsUpdater = self
+        // 2
+        searchController.obscuresBackgroundDuringPresentation = false
+        // 3
+        searchController.searchBar.placeholder = "Search Merit Badges"
+        // 4
+        navigationItem.searchController = searchController
+        // 5
+        definesPresentationContext = true
         
         }
     
@@ -180,13 +201,26 @@ class MeritBadgeLIstTableViewController: UITableViewController {
         }
     }
     
+    func filterContentForSearchText(_ searchText: String,
+                                    category: MeritBadge.Type? = nil) {
+        filteredBadges = meritbadges.filter { (meritbadges: MeritBadge) -> Bool in
+        return meritbadges.title.lowercased().contains(searchText.lowercased())
+      }
+      
+      MeritBadgetableview.reloadData()
+    }
+    
 }
 
 extension MeritBadgeLIstTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        if isFiltering {
+          return filteredBadges.count
+        }
+          
         return meritbadges.count
+
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -197,6 +231,13 @@ extension MeritBadgeLIstTableViewController {
         let fileManager = FileManager.default
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MeritBadgeCell") as! MeritBadgeCell
+        let currMeritBadges: MeritBadge
+        
+        if isFiltering {
+            currMeritBadges = filteredBadges[indexPath.row]
+        } else {
+            currMeritBadges = meritbadges[indexPath.row]
+        }
         
         //tableView.backgroundColor = UIColor.white
         //cell.backgroundColor = UIColor.gray
@@ -204,7 +245,7 @@ extension MeritBadgeLIstTableViewController {
         //cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.black.cgColor
         
-        cell.setMeritBadge(meritbadge: meritbadge)
+        cell.setMeritBadge(meritbadge: currMeritBadges)
         
         let switchObj = UISwitch(frame: CGRect(x: 1, y: 1, width: 20, height: 20))
         
@@ -310,7 +351,6 @@ extension MeritBadgeLIstTableViewController {
         }
     }
     
-    
 }
 
 extension MeritBadgeLIstTableViewController:  URLSessionDownloadDelegate {
@@ -333,4 +373,11 @@ extension MeritBadgeLIstTableViewController:  URLSessionDownloadDelegate {
             print("Copy Error: \(error.localizedDescription)")
         }
     }
+}
+
+extension MeritBadgeLIstTableViewController: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    let searchBar = searchController.searchBar
+    filterContentForSearchText(searchBar.text!)
+  }
 }
