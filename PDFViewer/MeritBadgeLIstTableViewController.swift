@@ -13,6 +13,7 @@ class MeritBadgeLIstTableViewController: UITableViewController {
     @IBOutlet var MeritBadgetableview: UITableView!
     @IBOutlet weak var LocalSaveSwitch: UISwitch!
     
+    //vars used for merit badge list
     var meritbadges: [MeritBadge] = []
     var whichBadge = ""
     var pdfURL: URL!
@@ -30,44 +31,46 @@ class MeritBadgeLIstTableViewController: UITableViewController {
       return searchController.isActive && !isSearchBarEmpty
     }
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         meritbadges = createArray()
         
-        //create the settings button programatically
-        let button = UIButton(frame: CGRect(x: self.view.frame.size.width - 80, y: 0, width: 60, height: 50))
+        //create the SETTINGS BUTTON programatically
+        let button = UIButton(frame: CGRect(x: self.view.frame.size.width - 80, y: -100, width: 60, height: 50))
         button.backgroundColor = .white
         button.setTitleColor(.blue, for: .normal)
         button.setTitle("Settings", for: .normal)
         button.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 16.0)
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
 
-        self.view.addSubview(button)
+        //self.view.addSubview(button)
         
-        // 1
+        //set things up for the creation of the SEARCH BAR
         searchController.searchResultsUpdater = self
-        // 2
         searchController.obscuresBackgroundDuringPresentation = false
-        // 3
         searchController.searchBar.placeholder = "Search Merit Badges"
-        // 4
         navigationItem.searchController = searchController
-        // 5
         definesPresentationContext = true
         
         }
     
+    
+    //func that moves to settings view if you tap the settings button
     @objc func buttonAction(sender: UIButton!) {
-        print("Button tapped")
+        //print("Button tapped")
         performSegue(withIdentifier: "settingsView", sender: nil)
         //defaults.set(false, forKey: "mySwitchValue")
         //meritbadges = createArray()
         //tableView.setNeedsDisplay()
     }
+    
 
+    //func that fills the merit badge array
     func createArray () -> [MeritBadge] {
         
+        //fills the FILE NAME and PRINTED TITLE of the merit badge books
         let meritBadgeName: [[String]] =
         [
         ["americanbusiness", "American Business"],
@@ -136,21 +139,37 @@ class MeritBadgeLIstTableViewController: UITableViewController {
         ["insectstudy", "Insect Study"],
         ["inventing", "Inventing"],
         ["journalism", "Journalism"],
+        ["kayaking", "Kayaking"],
+        ["law", "Law"],
+        ["leatherwork", "Leatherwork"],
+        ["lifesaving", "Lifesaving"],
+        ["mammalstudy", "Mammal Study"],
+        ["medicine", "Medicine"],
+        ["metalwork", "Metalwork"],
+        ["mininginsociety", "Mining in Society"],
+        ["modeldesign", "Model Design"],
+        ["motorboating", "Motorboating"],
+        ["moviemaking", "Moviemaking"],
+        ["musicandbugling", "Music and Bugling"],
+        ["nature", "Nature"],
+        ["nuclearscience", "Nuclear Science"],
+        ["oceanography", "Oceanography"],
         ]
         //print(meritBadgeName[0][1]) is "American Business"
         
         var tempMeritBadges: [MeritBadge] = []
         var tempMeritBadges2: [MeritBadge] = []
         
+        //creates the MERIT BADGE ARRAY
         for meritBadge in meritBadgeName {
             
-            print(meritBadge[0])
+            //print(meritBadge[0])
             let fullMeritBadgeInfo = MeritBadge(image: UIImage(named: meritBadge[0])!, title: meritBadge[1], filename: meritBadge[0])
             tempMeritBadges.append(fullMeritBadgeInfo)
 
         }
 
-        //loop through all array entries and check for local presence of merit badge pdf, set localfile to true if present
+        //loop through all array entries and check for LOCAL PRESENCE of merit badge pdf, set localfile to true if present
         let fileManager = FileManager.default
         for tempMeritBadge in tempMeritBadges {
             
@@ -164,24 +183,26 @@ class MeritBadgeLIstTableViewController: UITableViewController {
 
         }
         
-        //sort array by title
+        //sort array by TITLE
         tempMeritBadges.sort { $0.title < $1.title }
         
-        //then sort by if the book is downloaded
+        //then sort by if the book is DOWNLOADED
         let downloadOnly = defaults.bool(forKey: "mySwitchValue")
         
         if downloadOnly {
-            print("download is true ")
+            //print("download is true ")
             tempMeritBadges.sort { $0.localfile && !$1.localfile }
             return tempMeritBadges2
         }
         else{
-            print ("download is false")
+            //print ("download is false")
             return tempMeritBadges
         }
         
     }
     
+    
+    //creates the SPINNY overlay when downloading is going on
     func createSpinnerView() {
         let child = SpinnerViewController()
 
@@ -201,6 +222,8 @@ class MeritBadgeLIstTableViewController: UITableViewController {
         }
     }
     
+    
+    //func that filters the list by the letters the user types in the search box
     func filterContentForSearchText(_ searchText: String,
                                     category: MeritBadge.Type? = nil) {
         filteredBadges = meritbadges.filter { (meritbadges: MeritBadge) -> Bool in
@@ -223,10 +246,11 @@ extension MeritBadgeLIstTableViewController {
 
     }
     
+    //func that takes the merit badge array and fills the listview
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let meritbadge = meritbadges[indexPath.row]
-        print(meritbadge.title)
-        print(indexPath.row)
+        //print(meritbadge.title)
+        //print(indexPath.row)
         
         let fileManager = FileManager.default
         
@@ -252,11 +276,11 @@ extension MeritBadgeLIstTableViewController {
         switchObj.tag = indexPath.row
         
         if fileManager.fileExists(atPath: (NSHomeDirectory() + "/Library/Caches/" + currMeritBadges.filename + ".pdf")) {
-            print(currMeritBadges.title + " exists")
+            //print(currMeritBadges.title + " exists")
             switchObj.isOn = true
 
         } else {
-            print(currMeritBadges.title + "doesnt exists")
+            //print(currMeritBadges.title + "doesnt exists")
             switchObj.isOn = false
 
         }
@@ -267,10 +291,11 @@ extension MeritBadgeLIstTableViewController {
         return cell
     }
     
+    //func that downloads a pdf if you toggle the switch on the left of each list entry
      @objc func toggle(_ sender: UISwitch) {
         
-        print(NSHomeDirectory())
-        print(sender.tag)
+        //print(NSHomeDirectory())
+        //print(sender.tag)
         
 
         var filename = meritbadges[sender.tag].filename
@@ -341,20 +366,20 @@ extension MeritBadgeLIstTableViewController {
             currMeritBadges = meritbadges[indexPath.row]
         }
         
-        print("row selected: \(indexPath.row)")
-        print(currMeritBadges.title)
-        print(currMeritBadges.filename)
+        //print("row selected: \(indexPath.row)")
+        //print(currMeritBadges.title)
+        //print(currMeritBadges.filename)
         
         self.whichBadge = currMeritBadges.filename
         performSegue(withIdentifier: "PDFSegue", sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("segue id")
-        print(segue.identifier)
+        //print("segue id")
+        //print(segue.identifier)
         if segue.identifier == "SettingsView"
         {
-            print ("in settingsview")
+            //print ("in settingsview")
         }
         else if segue.identifier == "PDFSegue"
         {
@@ -366,12 +391,13 @@ extension MeritBadgeLIstTableViewController {
     
 }
 
+
 extension MeritBadgeLIstTableViewController:  URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         
-        print("downloadLocation:", location)
+        //print("downloadLocation:", location)
         // create destination URL with the original pdf name
-        print(NSHomeDirectory())
+        //print(NSHomeDirectory())
         guard let url = downloadTask.originalRequest?.url else { return }
         let documentsPath = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
         let destinationURL = documentsPath.appendingPathComponent(url.lastPathComponent)
@@ -387,6 +413,7 @@ extension MeritBadgeLIstTableViewController:  URLSessionDownloadDelegate {
         }
     }
 }
+
 
 extension MeritBadgeLIstTableViewController: UISearchResultsUpdating {
   func updateSearchResults(for searchController: UISearchController) {
