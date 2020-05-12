@@ -156,7 +156,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="SZV-fy-5so"/>
+                    <navigationItem key="navigationItem" title="Merit Badges" id="SZV-fy-5so"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="MeritBadgetableview" destination="tjI-Va-XVi" id="Vwg-nC-w0v"/>
@@ -178,7 +178,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAu-V1-oOt">
-                                <rect key="frame" x="35" y="64" width="112" height="41"/>
+                                <rect key="frame" x="35" y="108" width="112" height="41"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Settings">
                                         <attributes>
@@ -190,7 +190,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrY-So-k66">
-                                <rect key="frame" x="56" y="148" width="177" height="24"/>
+                                <rect key="frame" x="56" y="192" width="177" height="24"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Show only downloaded">
                                         <attributes>
@@ -201,7 +201,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Irb-w7-bHa">
-                                <rect key="frame" x="282" y="145" width="51" height="31"/>
+                                <rect key="frame" x="282" y="189" width="51" height="31"/>
                                 <connections>
                                     <action selector="downloadSwitchTapped:" destination="UDB-lf-hdR" eventType="valueChanged" id="HTD-FE-lEd"/>
                                 </connections>
@@ -253,7 +253,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kse-f4-iqJ" customClass="PDFThumbnailView">
-                                <rect key="frame" x="0.0" y="44" width="80" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="80" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="wgi-mx-vif"/>
@@ -365,9 +365,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IqX-8O-f4f"/>
         <segue reference="qZ6-XP-bil"/>
-        <segue reference="mpi-sd-OPT"/>
+        <segue reference="ihs-Ay-1Cx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Screen Shot 2020-02-04 at 3.46.30 PM" width="115" height="104"/>

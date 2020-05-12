@@ -251,12 +251,12 @@ extension MeritBadgeLIstTableViewController {
         
         switchObj.tag = indexPath.row
         
-        if fileManager.fileExists(atPath: (NSHomeDirectory() + "/Library/Caches/" + meritbadge.filename + ".pdf")) {
-            print(meritbadge.title + " exists")
+        if fileManager.fileExists(atPath: (NSHomeDirectory() + "/Library/Caches/" + currMeritBadges.filename + ".pdf")) {
+            print(currMeritBadges.title + " exists")
             switchObj.isOn = true
 
         } else {
-            print(meritbadge.title + "doesnt exists")
+            print(currMeritBadges.title + "doesnt exists")
             switchObj.isOn = false
 
         }
@@ -273,8 +273,13 @@ extension MeritBadgeLIstTableViewController {
         print(sender.tag)
         
 
-        let filename = meritbadges[sender.tag].filename
-        let title = meritbadges[sender.tag].title
+        var filename = meritbadges[sender.tag].filename
+        var title = meritbadges[sender.tag].title
+        
+        if isFiltering {
+            filename = filteredBadges[sender.tag].filename
+            title = filteredBadges[sender.tag].title
+        }
         
         if sender.isOn {
             
@@ -328,11 +333,19 @@ extension MeritBadgeLIstTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("row selected: \(indexPath.row)")
-        print(meritbadges[indexPath.row].title)
-        print(meritbadges[indexPath.row].filename)
+        let currMeritBadges: MeritBadge
         
-        self.whichBadge = meritbadges[indexPath.row].filename
+        if isFiltering {
+            currMeritBadges = filteredBadges[indexPath.row]
+        } else {
+            currMeritBadges = meritbadges[indexPath.row]
+        }
+        
+        print("row selected: \(indexPath.row)")
+        print(currMeritBadges.title)
+        print(currMeritBadges.filename)
+        
+        self.whichBadge = currMeritBadges.filename
         performSegue(withIdentifier: "PDFSegue", sender: self)
     }
 
