@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lHe-mD-zVG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lHe-mD-zVG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -98,7 +98,7 @@
             <objects>
                 <tableViewController title="Merit Badge" id="JAc-nR-cdj" userLabel="Merit Badge List" customClass="MeritBadgeLIstTableViewController" customModule="PDFViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" rowHeight="93" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tjI-Va-XVi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -156,7 +156,21 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Merit Badges" id="SZV-fy-5so"/>
+                    <navigationItem key="navigationItem" title="Merit Badges" id="SZV-fy-5so">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="yJF-5H-hYQ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fha-DV-GvB">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Tutorial"/>
+                                <connections>
+                                    <action selector="tutorialButtonPressed:" destination="JAc-nR-cdj" eventType="touchUpInside" id="JF0-Ff-MZB"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <segue destination="457-Le-7Cf" kind="show" identifier="tutorialView" id="HVi-zE-khw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="MeritBadgetableview" destination="tjI-Va-XVi" id="Vwg-nC-w0v"/>
@@ -174,11 +188,11 @@
             <objects>
                 <viewController id="UDB-lf-hdR" customClass="SettingsViewController" customModule="PDFViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8gF-II-Afl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAu-V1-oOt">
-                                <rect key="frame" x="35" y="64" width="112" height="41"/>
+                                <rect key="frame" x="35" y="20" width="112" height="41"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Settings">
                                         <attributes>
@@ -190,7 +204,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrY-So-k66">
-                                <rect key="frame" x="56" y="148" width="177" height="24"/>
+                                <rect key="frame" x="56" y="104" width="177" height="24"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Show only downloaded">
                                         <attributes>
@@ -201,13 +215,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Irb-w7-bHa">
-                                <rect key="frame" x="282" y="145" width="51" height="31"/>
+                                <rect key="frame" x="282" y="101" width="51" height="31"/>
                                 <connections>
                                     <action selector="downloadSwitchTapped:" destination="UDB-lf-hdR" eventType="valueChanged" id="HTD-FE-lEd"/>
                                 </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cC-xT-3Wb">
-                                <rect key="frame" x="319" y="725" width="61" height="59"/>
+                                <rect key="frame" x="319" y="671" width="61" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="GMB-sk-iFA"/>
                                     <constraint firstAttribute="width" constant="61" id="s8O-J3-oa2"/>
@@ -238,63 +252,89 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9EN-cd-lQ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2790" y="129"/>
+            <point key="canvasLocation" x="3223" y="423"/>
+        </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="JfY-NA-ws9">
+            <objects>
+                <viewController storyboardIdentifier="TutorialViewController" id="457-Le-7Cf" customClass="TutorialViewController" customModule="PDFViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d0g-Lg-DPT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwC-Zd-2jB">
+                                <rect key="frame" x="284" y="713" width="121" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="121" id="1Wu-Ej-47y"/>
+                                    <constraint firstAttribute="width" constant="121" id="SoW-dK-A8g"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="cdD-nj-dYN"/>
+                                    <constraint firstAttribute="height" constant="36" id="rci-JF-N9o"/>
+                                </constraints>
+                                <state key="normal" title="Back" image="backtolistbutton"/>
+                                <connections>
+                                    <segue destination="JAc-nR-cdj" kind="show" id="4bL-rX-QvY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="o1s-ZF-Evr" firstAttribute="bottom" secondItem="cwC-Zd-2jB" secondAttribute="bottom" constant="10" id="0xz-AP-BQM"/>
+                            <constraint firstItem="o1s-ZF-Evr" firstAttribute="trailing" secondItem="cwC-Zd-2jB" secondAttribute="trailing" constant="9" id="iuE-Ds-wSV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o1s-ZF-Evr"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="t5e-tu-Jfn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mcf-w0-nTV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3768" y="-254"/>
         </scene>
         <!--BSA Merit Badges-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PDFViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MJI-Ei-Wrb" customClass="PDFView">
                                 <rect key="frame" x="80" y="0.0" width="295" height="597"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Book not currently available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvg-fD-aaj">
-                                        <rect key="frame" x="8" y="239" width="317" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kse-f4-iqJ" customClass="PDFThumbnailView">
-                                <rect key="frame" x="0.0" y="44" width="80" height="769"/>
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="759"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="wgi-mx-vif"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feN-CB-qEt">
-                                <rect key="frame" x="333" y="750" width="61" height="59"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="9It-6k-iGQ"/>
-                                    <constraint firstAttribute="width" constant="61" id="aZ7-At-aUO"/>
-                                </constraints>
-                                <state key="normal" title="Back" image="backarrow100"/>
-                                <connections>
-                                    <segue destination="JAc-nR-cdj" kind="show" id="3qO-GA-Fa7"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="backarrow-1" translatesAutoresizingMaskIntoConstraints="NO" id="aeL-fh-XH9">
                                 <rect key="frame" x="-550" y="1108" width="409" height="409"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feN-CB-qEt">
+                                <rect key="frame" x="288" y="718" width="121" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Emd-cV-KUZ"/>
+                                    <constraint firstAttribute="width" constant="121" id="TUw-xe-ze0"/>
+                                </constraints>
+                                <state key="normal" title="Back" image="backtolistbutton"/>
+                                <connections>
+                                    <segue destination="JAc-nR-cdj" kind="show" id="3qO-GA-Fa7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kse-f4-iqJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7o3-hM-u4t"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="feN-CB-qEt" secondAttribute="bottom" constant="4" id="E8N-jh-bZa"/>
                             <constraint firstItem="MJI-Ei-Wrb" firstAttribute="leading" secondItem="kse-f4-iqJ" secondAttribute="trailing" id="Gsj-qt-AeV"/>
                             <constraint firstItem="MJI-Ei-Wrb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LH1-RR-EZg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="feN-CB-qEt" secondAttribute="trailing" constant="5" id="SAc-H4-6o9"/>
                             <constraint firstItem="kse-f4-iqJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="V1I-Ss-in4"/>
                             <constraint firstItem="MJI-Ei-Wrb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gWX-Hg-cI9"/>
                             <constraint firstItem="MJI-Ei-Wrb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jrA-ZK-QuM"/>
                             <constraint firstItem="kse-f4-iqJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="n3O-6g-Las"/>
-                            <constraint firstItem="feN-CB-qEt" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ogf-p2-ygM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="feN-CB-qEt" secondAttribute="bottom" constant="5" id="oYW-BR-3GH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -334,7 +374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2826.0869565217395" y="-753.34821428571422"/>
+            <point key="canvasLocation" x="2898.5507246376815" y="-773.4375"/>
         </scene>
         <!--Start-->
         <scene sceneID="vid-zh-aI8">
@@ -375,7 +415,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="qZ6-XP-bil"/>
-        <segue reference="3qO-GA-Fa7"/>
+        <segue reference="4bL-rX-QvY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Screen Shot 2020-02-04 at 3.46.30 PM" width="115" height="104"/>
@@ -385,6 +425,7 @@
         <image name="arrowright" width="25" height="25"/>
         <image name="backarrow-1" width="1546" height="1546"/>
         <image name="backarrow100" width="100" height="100"/>
+        <image name="backtolistbutton" width="281" height="79"/>
         <image name="sidebar.left" catalog="system" width="128" height="93"/>
     </resources>
 </document>

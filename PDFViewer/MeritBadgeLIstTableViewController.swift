@@ -56,6 +56,13 @@ class MeritBadgeLIstTableViewController: UITableViewController {
         
         }
     
+    @IBAction func tutorialButtonPressed(_ sender: Any) {
+        
+        print("Pressed Tutorial")
+        
+        performSegue(withIdentifier: "tutorialView", sender: nil)
+        
+    }
     
     //func that moves to settings view if you tap the settings button
     @objc func buttonAction(sender: UIButton!) {

@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		262136C12485674F00CC4F98 /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262136C02485674F00CC4F98 /* TutorialVC.swift */; };
 		264FA7B623F1FD6500E7C0E1 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264FA7B523F1FD6400E7C0E1 /* SpinnerViewController.swift */; };
 		267F423A23F0B0FD002C7585 /* MeritBadgeLIstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267F423923F0B0FD002C7585 /* MeritBadgeLIstTableViewController.swift */; };
 		267F423E23F0B4D5002C7585 /* MeritBadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267F423D23F0B4D5002C7585 /* MeritBadgeCell.swift */; };
 		269AFB972444BBD8004BD908 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AFB962444BBD8004BD908 /* SettingsViewController.swift */; };
+		26A901C82478278900F40C34 /* MeritBadgeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A901C72478278900F40C34 /* MeritBadgeAppTests.swift */; };
+		26A901D32478278900F40C34 /* MeritBadgeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A901D22478278900F40C34 /* MeritBadgeAppUITests.swift */; };
 		26B1EAB223F0B8010002276D /* MeritBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1EAB123F0B8010002276D /* MeritBadge.swift */; };
 		26C887BD23EA107F0021C574 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C887BC23EA107F0021C574 /* MainViewController.swift */; };
 		9BDDDBAD1FFC6A030090BDB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDDDBAC1FFC6A030090BDB4 /* AppDelegate.swift */; };
@@ -21,10 +24,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		262136C02485674F00CC4F98 /* TutorialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
+		2628AB41246F0B46006F8356 /* PDFViewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PDFViewer.entitlements; sourceTree = "<group>"; };
 		264FA7B523F1FD6400E7C0E1 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		267F423923F0B0FD002C7585 /* MeritBadgeLIstTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeritBadgeLIstTableViewController.swift; sourceTree = "<group>"; };
 		267F423D23F0B4D5002C7585 /* MeritBadgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeritBadgeCell.swift; sourceTree = "<group>"; };
 		269AFB962444BBD8004BD908 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		26A901B42478278700F40C34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		26A901B62478278700F40C34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		26A901B82478278900F40C34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		26A901BB2478278900F40C34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		26A901BD2478278900F40C34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A901BE2478278900F40C34 /* MeritBadgeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeritBadgeApp.entitlements; sourceTree = "<group>"; };
+		26A901C32478278900F40C34 /* MeritBadgeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeritBadgeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A901C72478278900F40C34 /* MeritBadgeAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeritBadgeAppTests.swift; sourceTree = "<group>"; };
+		26A901C92478278900F40C34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A901CE2478278900F40C34 /* MeritBadgeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeritBadgeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A901D22478278900F40C34 /* MeritBadgeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeritBadgeAppUITests.swift; sourceTree = "<group>"; };
+		26A901D42478278900F40C34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26B1EAB123F0B8010002276D /* MeritBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeritBadge.swift; sourceTree = "<group>"; };
 		26C887BC23EA107F0021C574 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9BDDDBA91FFC6A030090BDB4 /* PDFViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +54,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		26A901C02478278900F40C34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A901CB2478278900F40C34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9BDDDBA61FFC6A030090BDB4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -47,10 +78,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26A901B32478278700F40C34 /* MeritBadgeApp */ = {
+			isa = PBXGroup;
+			children = (
+				26A901B42478278700F40C34 /* AppDelegate.swift */,
+				26A901B62478278700F40C34 /* ViewController.swift */,
+				26A901B82478278900F40C34 /* Assets.xcassets */,
+				26A901BA2478278900F40C34 /* Main.storyboard */,
+				26A901BD2478278900F40C34 /* Info.plist */,
+				26A901BE2478278900F40C34 /* MeritBadgeApp.entitlements */,
+			);
+			path = MeritBadgeApp;
+			sourceTree = "<group>";
+		};
+		26A901C62478278900F40C34 /* MeritBadgeAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				26A901C72478278900F40C34 /* MeritBadgeAppTests.swift */,
+				26A901C92478278900F40C34 /* Info.plist */,
+			);
+			path = MeritBadgeAppTests;
+			sourceTree = "<group>";
+		};
+		26A901D12478278900F40C34 /* MeritBadgeAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				26A901D22478278900F40C34 /* MeritBadgeAppUITests.swift */,
+				26A901D42478278900F40C34 /* Info.plist */,
+			);
+			path = MeritBadgeAppUITests;
+			sourceTree = "<group>";
+		};
 		9BDDDBA01FFC6A020090BDB4 = {
 			isa = PBXGroup;
 			children = (
 				9BDDDBAB1FFC6A030090BDB4 /* PDFViewer */,
+				26A901B32478278700F40C34 /* MeritBadgeApp */,
+				26A901C62478278900F40C34 /* MeritBadgeAppTests */,
+				26A901D12478278900F40C34 /* MeritBadgeAppUITests */,
 				9BDDDBAA1FFC6A030090BDB4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				9BDDDBA91FFC6A030090BDB4 /* PDFViewer.app */,
+				26A901C32478278900F40C34 /* MeritBadgeAppTests.xctest */,
+				26A901CE2478278900F40C34 /* MeritBadgeAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,6 +133,7 @@
 		9BDDDBAB1FFC6A030090BDB4 /* PDFViewer */ = {
 			isa = PBXGroup;
 			children = (
+				2628AB41246F0B46006F8356 /* PDFViewer.entitlements */,
 				9BDDDBAC1FFC6A030090BDB4 /* AppDelegate.swift */,
 				9BDDDBAE1FFC6A030090BDB4 /* ViewController.swift */,
 				26C887BC23EA107F0021C574 /* MainViewController.swift */,
@@ -74,6 +142,7 @@
 				269AFB962444BBD8004BD908 /* SettingsViewController.swift */,
 				26B1EAB123F0B8010002276D /* MeritBadge.swift */,
 				264FA7B523F1FD6400E7C0E1 /* SpinnerViewController.swift */,
+				262136C02485674F00CC4F98 /* TutorialVC.swift */,
 				9BDDDBB01FFC6A030090BDB4 /* Main.storyboard */,
 				9BDDDBB31FFC6A030090BDB4 /* Assets.xcassets */,
 				9BDDDBB51FFC6A030090BDB4 /* LaunchScreen.storyboard */,
@@ -85,6 +154,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		26A901C22478278900F40C34 /* MeritBadgeAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26A901DC2478278900F40C34 /* Build configuration list for PBXNativeTarget "MeritBadgeAppTests" */;
+			buildPhases = (
+				26A901BF2478278900F40C34 /* Sources */,
+				26A901C02478278900F40C34 /* Frameworks */,
+				26A901C12478278900F40C34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MeritBadgeAppTests;
+			productName = MeritBadgeAppTests;
+			productReference = 26A901C32478278900F40C34 /* MeritBadgeAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		26A901CD2478278900F40C34 /* MeritBadgeAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26A901DD2478278900F40C34 /* Build configuration list for PBXNativeTarget "MeritBadgeAppUITests" */;
+			buildPhases = (
+				26A901CA2478278900F40C34 /* Sources */,
+				26A901CB2478278900F40C34 /* Frameworks */,
+				26A901CC2478278900F40C34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MeritBadgeAppUITests;
+			productName = MeritBadgeAppUITests;
+			productReference = 26A901CE2478278900F40C34 /* MeritBadgeAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		9BDDDBA81FFC6A030090BDB4 /* PDFViewer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BDDDBBB1FFC6A030090BDB4 /* Build configuration list for PBXNativeTarget "PDFViewer" */;
@@ -108,10 +211,20 @@
 		9BDDDBA11FFC6A020090BDB4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Todd Kramer";
 				TargetAttributes = {
+					26A901C22478278900F40C34 = {
+						CreatedOnToolsVersion = 11.5;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 26A901B12478278700F40C34;
+					};
+					26A901CD2478278900F40C34 = {
+						CreatedOnToolsVersion = 11.5;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 26A901B12478278700F40C34;
+					};
 					9BDDDBA81FFC6A030090BDB4 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1020;
@@ -133,11 +246,27 @@
 			projectRoot = "";
 			targets = (
 				9BDDDBA81FFC6A030090BDB4 /* PDFViewer */,
+				26A901C22478278900F40C34 /* MeritBadgeAppTests */,
+				26A901CD2478278900F40C34 /* MeritBadgeAppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		26A901C12478278900F40C34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A901CC2478278900F40C34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9BDDDBA71FFC6A030090BDB4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -151,6 +280,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		26A901BF2478278900F40C34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A901C82478278900F40C34 /* MeritBadgeAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A901CA2478278900F40C34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A901D32478278900F40C34 /* MeritBadgeAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9BDDDBA51FFC6A030090BDB4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -161,6 +306,7 @@
 				9BDDDBAD1FFC6A030090BDB4 /* AppDelegate.swift in Sources */,
 				267F423E23F0B4D5002C7585 /* MeritBadgeCell.swift in Sources */,
 				264FA7B623F1FD6500E7C0E1 /* SpinnerViewController.swift in Sources */,
+				262136C12485674F00CC4F98 /* TutorialVC.swift in Sources */,
 				26B1EAB223F0B8010002276D /* MeritBadge.swift in Sources */,
 				269AFB972444BBD8004BD908 /* SettingsViewController.swift in Sources */,
 			);
@@ -169,6 +315,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		26A901BA2478278900F40C34 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26A901BB2478278900F40C34 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		9BDDDBB01FFC6A030090BDB4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -188,6 +342,90 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		26A901D72478278900F40C34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FZ4CA4W4KB;
+				INFOPLIST_FILE = MeritBadgeAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.willwoodard.MeritBadgeAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeritBadgeApp.app/Contents/MacOS/MeritBadgeApp";
+			};
+			name = Debug;
+		};
+		26A901D82478278900F40C34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FZ4CA4W4KB;
+				INFOPLIST_FILE = MeritBadgeAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.willwoodard.MeritBadgeAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeritBadgeApp.app/Contents/MacOS/MeritBadgeApp";
+			};
+			name = Release;
+		};
+		26A901D92478278900F40C34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FZ4CA4W4KB;
+				INFOPLIST_FILE = MeritBadgeAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.willwoodard.MeritBadgeAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = MeritBadgeApp;
+			};
+			name = Debug;
+		};
+		26A901DA2478278900F40C34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FZ4CA4W4KB;
+				INFOPLIST_FILE = MeritBadgeAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.willwoodard.MeritBadgeAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = MeritBadgeApp;
+			};
+			name = Release;
+		};
 		9BDDDBB91FFC6A030090BDB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -303,14 +541,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PDFViewer/PDFViewer.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = FZ4CA4W4KB;
 				INFOPLIST_FILE = PDFViewer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willwoodard.BSAMeritBadge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -320,14 +561,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PDFViewer/PDFViewer.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = FZ4CA4W4KB;
 				INFOPLIST_FILE = PDFViewer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willwoodard.BSAMeritBadge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -336,6 +580,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		26A901DC2478278900F40C34 /* Build configuration list for PBXNativeTarget "MeritBadgeAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A901D72478278900F40C34 /* Debug */,
+				26A901D82478278900F40C34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26A901DD2478278900F40C34 /* Build configuration list for PBXNativeTarget "MeritBadgeAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A901D92478278900F40C34 /* Debug */,
+				26A901DA2478278900F40C34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9BDDDBA41FFC6A020090BDB4 /* Build configuration list for PBXProject "PDFViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

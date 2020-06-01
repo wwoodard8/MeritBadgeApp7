@@ -75,6 +75,9 @@ class ViewController: UIViewController {
         print(showBadgeName)
         print(showpdfURL)
         
+        let pw = "U2UaMFw5mSZsh95P"
+        var locked = false
+        
         let fileManager = FileManager.default
         if fileManager.fileExists(atPath: (NSHomeDirectory() + "/Library/Caches/" + showBadgeName + ".pdf")) {
             //errorLabel.text = "it's here"
@@ -86,6 +89,7 @@ class ViewController: UIViewController {
             print(fullurl)
             //show pdf from cache
             if let document = PDFDocument(url: fullurl!) {
+                document.unlock(withPassword: pw)
                 pdfView.document = document
             }
         }
@@ -93,8 +97,12 @@ class ViewController: UIViewController {
             //errorLabel.text = "it ain't here"
             //create URL from string
             guard let url = URL(string: "https://willwoodard.com/meritbadge/" + showBadgeName + ".pdf") else { return }
-            let document = PDFDocument(url: url)
-            pdfView.document = document
+            if let document = PDFDocument(url: url) {
+                if document.isLocked {
+                    locked = document.unlock(withPassword: pw)
+                }
+                pdfView.document = document
+            }
 
         }
         resetNavigationButtons()
